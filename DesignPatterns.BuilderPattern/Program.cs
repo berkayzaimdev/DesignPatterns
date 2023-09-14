@@ -27,7 +27,7 @@ var url = eb.Build();
 
 // Console.WriteLine("Final URL: "+url);
 
-//Burada örnek bir builder oluşturduk. URL üreten basit bir class olarak karşımıza çıkıyor, fakat farklı farklı URL'ler üretmek istediğimi zaman tıkanırız.
+//Burada örnek bir Builder oluşturduk. URL üreten basit bir class olarak karşımıza çıkıyor, fakat farklı farklı URL'ler üretmek istediğimi zaman tıkanırız.
 //Bunu MMORPG türündeki bir oyunda karakter oluşturmak gibi düşünebiliriz. İnsan ırkını seçtiysek sınıflar ve karşılaştığımız görevler farklı olur, Elf ırkını seçtiysek farklı olur gibi türetebiliriz.
 //Fakat sınıf ve görev sistemi hep aynıdır. Factory tasarım desenindeki ana hedef; temelde aynı işi yapan fakat bir noktada dallara ayrılan sınıfları pratik bir şekilde oluşturmak ve yönetmektir.
 #endregion
@@ -70,7 +70,7 @@ EmployeeM2 GenerateEmployee(string fullName, string emailAddress, int empType)
 
     return employeeBuilder.BuildEmployee();
 }
-// Ek bir metot yazarak Factory tasarım desenini tam manasıyla çalıştırabildik. Üretim için int tipinde bir değişkene ihtiyaç duyduk. Bu değişken bizim hangi Factory'e gideceğimizi belirliyor.
+// Ek bir metot yazarak Builder tasarım desenini tam manasıyla çalıştırabildik. Üretim için int tipinde bir değişkene ihtiyaç duyduk. Bu değişken bizim hangi Builder'e gideceğimizi belirliyor.
 // Internal'a gitseydik de aynı metotları uygulayacaktık fakat metotların birbirinden farklı işlemleri de uygulanacaktı.
 
 #region Without Additional Function
