@@ -1,29 +1,26 @@
-var Database = /** @class */ (function () {
-    function Database() {
+"use strict";
+class Database {
+    constructor() {
         this.count = 1;
         console.log("Nesne �retildi!");
     }
-    Object.defineProperty(Database, "getInstance", {
-        get: function () {
-            if (this._database == null) {
-                this._database = new Database();
-            }
-            return this._database;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Database.prototype.connection = function () {
+    static get getInstance() {
+        if (this._database == null) {
+            this._database = new Database();
+        }
+        return this._database;
+    }
+    connection() {
         console.log("Connected");
         console.log(this.count++);
-    };
-    return Database;
-}());
-var d1 = Database.getInstance;
+    }
+}
+let d1 = Database.getInstance;
 d1.connection();
-var d2 = Database.getInstance;
+let d2 = Database.getInstance;
 d2.connection();
-var d3 = Database.getInstance;
+let d3 = Database.getInstance;
 d3.connection();
-var d4 = Database.getInstance;
+let d4 = Database.getInstance;
 d4.connection();
+//# sourceMappingURL=app.js.map
