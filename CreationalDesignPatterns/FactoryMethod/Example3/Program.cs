@@ -1,4 +1,6 @@
-﻿BankCreator bankCreator = new();
+﻿using System.Reflection;
+
+BankCreator bankCreator = new();
 AlbarakaBank? albaraka = bankCreator.Create(BankType.Albaraka) as AlbarakaBank;
 KuveytturkBank? kuveytturk = bankCreator.Create(BankType.Kuveytturk) as KuveytturkBank;
 VakifBank? vakif = bankCreator.Create(BankType.Vakif) as VakifBank;
@@ -96,6 +98,11 @@ class VakifBank : IBank
     public void SendMoneyToAccountNumber(int amount, string recipientName, string accountNumber) => Console.WriteLine($"{amount} money sent to {accountNumber}");
 }
 
+class IsBank : IBank
+{
+
+}
+
 #endregion
 
 #region Abstract Factory
@@ -153,6 +160,14 @@ class VakifFactory : IBankFactory
     }
 }
 
+class IsBankFactory : IBankFactory
+{
+    public IBank CreateInstance()
+    {
+        throw new NotImplementedException();
+    }
+}
+
 #endregion
 
 #region Creator
@@ -161,20 +176,27 @@ enum BankType
 {
     Albaraka,
     Kuveytturk,
-    Vakif
+    Vakif,
+    Is
 }
 
 class BankCreator
 {
     public IBank Create(BankType bankType)
     {
-        IBankFactory _bankFactory = bankType switch
-        {
-            BankType.Albaraka => AlbarakaFactory.GetInstance,
-            BankType.Kuveytturk => KuveytturkFactory.GetInstance,
-            BankType.Vakif => VakifFactory.GetInstance,
-            _ => throw new NotImplementedException()
-        };
+        //IBankFactory _bankFactory = bankType switch
+        //{
+        //    BankType.Albaraka => AlbarakaFactory.GetInstance,
+        //    BankType.Kuveytturk => KuveytturkFactory.GetInstance,
+        //    BankType.Vakif => VakifFactory.GetInstance,
+        //    BankType.Is => new IsBankFactory(),
+        //    _ => throw new NotImplementedException()
+        //};
+
+        string factory = $"{bankType.ToString()}Factory"; 
+        Type? type = Assembly.GetExecutingAssembly().GetType(factory);
+
+        IBankFactory _bankFactory = Activator.CreateInstance(type) as IBankFactory;
 
         return _bankFactory.CreateInstance();
     }
