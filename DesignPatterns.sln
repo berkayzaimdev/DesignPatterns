@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example2", "CreationalDesig
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example3", "CreationalDesignPatterns\FactoryMethod\Example3\Example3.csproj", "{BC756574-0531-4C60-B92A-06E1CFBC95AC}"
 EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "TypescriptExample", "CreationalDesignPatterns\FactoryMethod\TypescriptExample\TypescriptExample.esproj", "{7AC5E871-D6D4-4CBB-86AC-B8D42D120FA1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,12 @@ Global
 		{BC756574-0531-4C60-B92A-06E1CFBC95AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC756574-0531-4C60-B92A-06E1CFBC95AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC756574-0531-4C60-B92A-06E1CFBC95AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AC5E871-D6D4-4CBB-86AC-B8D42D120FA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AC5E871-D6D4-4CBB-86AC-B8D42D120FA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AC5E871-D6D4-4CBB-86AC-B8D42D120FA1}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{7AC5E871-D6D4-4CBB-86AC-B8D42D120FA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AC5E871-D6D4-4CBB-86AC-B8D42D120FA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AC5E871-D6D4-4CBB-86AC-B8D42D120FA1}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -134,6 +142,7 @@ Global
 		{7C655E94-2852-4815-A716-B4BE8F6F3A4E} = {F2A9F565-5D10-4AF5-BBD6-E4C0CBE62EED}
 		{D23B2B74-2D5F-4A32-86DD-9C4ED497907E} = {F2A9F565-5D10-4AF5-BBD6-E4C0CBE62EED}
 		{BC756574-0531-4C60-B92A-06E1CFBC95AC} = {F2A9F565-5D10-4AF5-BBD6-E4C0CBE62EED}
+		{7AC5E871-D6D4-4CBB-86AC-B8D42D120FA1} = {F2A9F565-5D10-4AF5-BBD6-E4C0CBE62EED}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CEB886CE-C27B-4706-8ED3-20AE46EAC112}
